@@ -1,0 +1,7 @@
+C:\Users\Roger\Dysk Google\C#\GITProjekty\TurboKalkulator\ProjektKonsola\ProjektKonsola\obj\Debug\ProjektKonsola.csprojAssemblyReference.cache
+C:\Users\Roger\Dysk Google\C#\GITProjekty\TurboKalkulator\ProjektKonsola\ProjektKonsola\obj\Debug\ProjektKonsola.csproj.CoreCompileInputs.cache
+C:\Users\Roger\Dysk Google\C#\GITProjekty\TurboKalkulator\ProjektKonsola\ProjektKonsola\bin\Debug\ProjektKonsola.exe.config
+C:\Users\Roger\Dysk Google\C#\GITProjekty\TurboKalkulator\ProjektKonsola\ProjektKonsola\bin\Debug\ProjektKonsola.exe
+C:\Users\Roger\Dysk Google\C#\GITProjekty\TurboKalkulator\ProjektKonsola\ProjektKonsola\bin\Debug\ProjektKonsola.pdb
+C:\Users\Roger\Dysk Google\C#\GITProjekty\TurboKalkulator\ProjektKonsola\ProjektKonsola\obj\Debug\ProjektKonsola.exe
+C:\Users\Roger\Dysk Google\C#\GITProjekty\TurboKalkulator\ProjektKonsola\ProjektKonsola\obj\Debug\ProjektKonsola.pdb
