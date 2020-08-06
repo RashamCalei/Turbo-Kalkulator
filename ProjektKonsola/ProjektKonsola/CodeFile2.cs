@@ -11,7 +11,6 @@ public class Program
         Console.WriteLine("Witaj w programie Kalkulator");
         Console.WriteLine("Podaj tryb kalkulatora: ");
         Console.WriteLine("[1] - Standard\n[2] - Matura");
-    label1:;
         string mode = Console.ReadLine();
         switch (Parser(mode))
         {
@@ -21,7 +20,7 @@ public class Program
                 { break; }
             default:
                 {
-                   goto label1;
+                    break;
                 }
         }
 
