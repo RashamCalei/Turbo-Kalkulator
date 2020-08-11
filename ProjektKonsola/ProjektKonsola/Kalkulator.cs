@@ -4,61 +4,55 @@ public class Program
 
     public static void Main()
     {
-        double a, b, c;
+        double a = 0;
+        double b, c;        // chyba się nie przydadzą
         Console.WriteLine("Witaj w programie Kalkulator");      // wiadomość powitalna
-        Console.WriteLine("[1] - Standard\n[2] - Matura");
+        Console.WriteLine("[1] - Standard\n[2] - Matura\n[3] - Wyjście");
     labelMode:;
         Console.Write("Podaj tryb kalkulatora: ");
-        string load = Console.ReadLine();
-        switch (Parser(load))       // wybór trybu matura standard 
+        switch (Parser())       // wybór trybu matura standard 
         {
             case 1:     // tryb standard
                 {
-                    System.Console.Clear();     // wyczyszczenie ekranu
-                    Console.WriteLine("[0] Wyjście z programu");
-                    Console.WriteLine("[1] Dodawanie");
-                    Console.WriteLine("[2] Odejmowanie");
-                    Console.WriteLine("[3] Mnożenie");
-                    Console.WriteLine("[4] Dzielenie");
-                    Console.Write("Podaj a: ");
-                    a = Parser(load);       //  wczytanie liczby wydaje sie nie działać !!!
-
-                    switch (Parser(load))
+                    string operation;
+                    do      // pętla na cały case 1 wydaje się nie działać - program musi się zatrzymać aby wyświetlić wynik
                     {
-                        case 0:     // wyjście z programu
-                            {
+                        System.Console.Clear();     // wyczyszczenie ekranu
+                        Console.WriteLine("[Q] Wyjście z programu");
+                        Console.WriteLine("[+] Dodawanie");
+                        Console.WriteLine("[-] Odejmowanie");
+                        Console.WriteLine("[*] Mnożenie");
+                        Console.WriteLine("[/] Dzielenie");
+                        Console.WriteLine("Podaj a\nWybierz operację\nPodaj b");
 
-                                break;
-                            }
-                        case 1:     // dodawanie
-                            {
+                        a = Parser();
+                        operation = Console.ReadLine();     // wybierz operację
 
-                                break;
-                            }
-                        case 2:     // odejmowanie
-                            {
-
-                                break;
-                            }
-                        case 3:     // mnożenie
-                            {
-
-                                break;
-                            }
-                        case 4:
-                            {       // dzielenie
-
-                                break;
-                            }
-                        default:
-                            {
-                                break;
-                            }
-                    }
+                        if (operation == "+")
+                        {       // dodawanie
+                            a = Add(a);
+                            Console.WriteLine(a);
+                        }
+                        else if (operation == "-")
+                        {       // odejmowanie
+                            a = Substract(a);
+                            Console.WriteLine(a);
+                        }
+                        else if (operation == "*")
+                        {       // mnożenie
+                            a = Multiply(a);
+                            Console.WriteLine(a);
+                        }
+                        else if (operation == "/")
+                        {       // dzielenie
+                            a = Devide(a);
+                            Console.WriteLine(a);
+                        }
+                    } while (operation != "Q");     // warunek kończący pętlę i program
                     break;
                 }
             case 2:     // tryb matury
-                { Console.WriteLine("Implementacja matury później ;)"); break; }
+                { Console.WriteLine("Implementacja matury później ;)"); goto labelMode; }
             case 3:     // wyjście z aplikacji
                 { Console.WriteLine("Do POLICZENIA! HA"); break; }
             default:
@@ -69,17 +63,38 @@ public class Program
         }
 
     }
-    public static double Parser(string input)      // metoda parsująca
+    public static double Parser()     // metoda parsująca
     {
-        double a = 0;
+        string input = Console.ReadLine();
+        double val = 0;
         try         //  zabezpieczenie przed wprowadzeniem liter i znaków
         {
-            a = double.Parse(input);
+            val = double.Parse(input);
         }
         catch (FormatException)
         {
             Console.WriteLine("Podana wartość nie jest liczbą.");
         }
-        return a;
+        return val;
+    }
+    public static double Add(double a)      // metoda dodająca a (wprowadzone jako parametr) do b
+    {
+        double b = Parser();
+        return a + b;
+    }
+    public static double Substract(double a)      // metoda dodająca a (wprowadzone jako parametr) do b
+    {
+        double b = Parser();
+        return a - b;
+    }
+    public static double Multiply(double a)      // metoda dodająca a (wprowadzone jako parametr) do b
+    {
+        double b = Parser();
+        return a * b;
+    }
+    public static double Devide(double a)      // metoda dodająca a (wprowadzone jako parametr) do b
+    {
+        double b = Parser();
+        return a / b;
     }
 }
