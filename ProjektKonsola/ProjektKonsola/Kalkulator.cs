@@ -5,7 +5,7 @@ public class Program
     public static void Main()
     {
         double a = 0;
-        double b, c;        // chyba się nie przydadzą
+        string operation;
         Console.WriteLine("Witaj w programie Kalkulator");      // wiadomość powitalna
         Console.WriteLine("[1] - Standard\n[2] - Matura\n[3] - Wyjście");
     labelMode:;
@@ -14,41 +14,48 @@ public class Program
         {
             case 1:     // tryb standard
                 {
-                    string operation;
+
                     do      // pętla na cały case 1 wydaje się nie działać - program musi się zatrzymać aby wyświetlić wynik
                     {
-                        System.Console.Clear();     // wyczyszczenie ekranu
-                        Console.WriteLine("[Q] Wyjście z programu");
-                        Console.WriteLine("[+] Dodawanie");
-                        Console.WriteLine("[-] Odejmowanie");
-                        Console.WriteLine("[*] Mnożenie");
-                        Console.WriteLine("[/] Dzielenie");
-                        Console.WriteLine("Podaj a\nWybierz operację\nPodaj b");
-
+                    System.Console.Clear();     // wyczyszczenie ekranu
+                    Console.WriteLine("[Q] Wyjście z programu");
+                    Console.WriteLine("[+] Dodawanie");
+                    Console.WriteLine("[-] Odejmowanie");
+                    Console.WriteLine("[*] Mnożenie");
+                    Console.WriteLine("[/] Dzielenie");
+                    Console.WriteLine("Podaj a\nWybierz operację\nPodaj b");
+                    
                         a = Parser();
                         operation = Console.ReadLine();     // wybierz operację
 
                         if (operation == "+")
                         {       // dodawanie
                             a = Add(a);
-                            Console.WriteLine(a);
+                            Console.WriteLine("\n" + a);
                         }
                         else if (operation == "-")
                         {       // odejmowanie
                             a = Substract(a);
-                            Console.WriteLine(a);
+                            Console.WriteLine("\n" + a);
                         }
                         else if (operation == "*")
                         {       // mnożenie
                             a = Multiply(a);
-                            Console.WriteLine(a);
+                            Console.WriteLine("\n" + a);
                         }
                         else if (operation == "/")
                         {       // dzielenie
                             a = Devide(a);
-                            Console.WriteLine(a);
+                            Console.WriteLine("\n" + a);
                         }
-                    } while (operation != "Q");     // warunek kończący pętlę i program
+                        else
+                        {
+                            Console.WriteLine("Błąd");
+                        }
+
+                        while (Console.ReadKey().Key != ConsoleKey.Enter ) { }      // pętla pozwalająca zatrzymać program do odczytania wyniku
+                        Console.Clear();        // czyszczenie całego ekranu
+                    } while (operation != "q" || operation != "Q");     // warunek kończący pętlę i program
                     break;
                 }
             case 2:     // tryb matury
